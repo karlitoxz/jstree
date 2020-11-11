@@ -1,3 +1,8 @@
+<?php 
+include "php/config.php";
+include "php/getData.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,25 +12,11 @@
 	<link rel="stylesheet" href="dist/themes/default/style.min.css" />
 </head>
 <body>
-	<div id="data">
-		<ul>
-			<li>one</li>
-			<li>Two</li>
-			<li>Node
-				<ul>
-					<li>Child 1</li>
-					<li>Child 2</li>
-				</ul>
-			</li>
-			<li>Tree</li>
-			<li>Four</li>
-		</ul>
+<!-- Initialize jsTree -->
+   <div id="folder_jstree"></div>
 
-
-
-
-	</div>
-
+   <!-- Store folder list in JSON format -->
+   <textarea id='txt_folderjsondata'><?= json_encode($folders_arr) ?></textarea>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="dist/jstree.min.js"></script>
